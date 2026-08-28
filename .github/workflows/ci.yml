@@ -71,11 +71,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Inspect files
-        run: ls -R .
+      - name: Download build output
+        uses: actions/download-artifact@v7
+        with:
+          name: web-dist
+          path: ./dist
+    
+      - name: Inspect build output
+        run: |
+          ls -R dist
+          cat dist/index.html
         
       - name: Deploy
-        run: echo "Deploying application"    
+        run: echo "Deploying application" 
+
+
+
+
+
+
+
+
+        
 
     
        
