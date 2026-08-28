@@ -1,3 +1,3 @@
 # githubexercises
 
-Testing the automatic GitHub Actions workflow
+Testing the automatic GitHub Actions workflow.
