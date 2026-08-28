@@ -43,6 +43,9 @@ jobs:
       - name: Show trigger
         run: echo "Triggered by ${{ github.event_name }}"
 
+      - name: Run tests
+        run: echo "Tests passed"  
+
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -54,8 +57,13 @@ jobs:
         run: |
           mkdir -p dist
           cp src/index.html dist/index.html
-          
 
-      - name: Run tests
-        run: echo "Tests passed"
+          
+  deploy-demo:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy
+        run: echo "Deploying application"    
        
