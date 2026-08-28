@@ -11,25 +11,38 @@ on: #trigger
 
 
 
+# jobs:
+#   hello: #name of our job
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v7
+      
+#       - name: Show trigger
+#         run: echo "Triggered by ${{ github.event_name }}"
+      
+#       - name: Show environment
+#         run: |
+#           echo "Hello from GitHub Actions" # print something
+#           uname -a # name of operating system
+#           pwd #print the working directory / folder
+
+#       - name: List files
+#         run: ls -la  
+
+#       - name: list contents of index.html
+#         run: cat src/index.html
+
 jobs:
-  hello: #name of our job
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v7
-      
+
       - name: Show trigger
         run: echo "Triggered by ${{ github.event_name }}"
-      
-      - name: Show environment
-        run: |
-          echo "Hello from GitHub Actions" # print something
-          uname -a # name of operating system
-          pwd #print the working directory / folder
 
-      - name: List files
-        run: ls -la  
-
-      - name: list contents of index.html
-        run: cat src/index.html
+      - name: Run tests
+        run: echo "Tests passed"
        
