@@ -3,9 +3,11 @@ name: CI
 on: #trigger
   workflow_dispatch: #mannual button to run this workflow
 
-   push:
+  push:
     branches:
       - main
+    paths:
+      - 'src/**'  
 
 
 
