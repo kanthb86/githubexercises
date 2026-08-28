@@ -43,6 +43,19 @@ jobs:
       - name: Show trigger
         run: echo "Triggered by ${{ github.event_name }}"
 
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build application
+        run: |
+          mkdir -p dist
+          cp src/index.html dist/index.html
+          
+
       - name: Run tests
         run: echo "Tests passed"
        
