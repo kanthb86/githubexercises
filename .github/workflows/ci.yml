@@ -64,6 +64,8 @@ jobs:
         with:
           name: web-dist
           path: dist/
+          retention-days: 7
+          
   
   deploy-demo:
     needs: build
